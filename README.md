@@ -15,5 +15,5 @@ There has been extensive data gathering, processing and testing done to complete
 The next step in the process was to develop the method of detection, and ultimately two methods were chosen. One method that was used for detection was the Dicrete Laplace Opperator. The Laplace Opperator is defined as the divergence of the gradient of a function. It comes in the form
 
 $$
-\Delta = \nabla^{2}f = \sum_{j = 1}^{n} \frac{\partial^{2}}{\partial x_{j}^{2}}
+\Delta \cdot f = \nabla^{2} \cdot f = \sum_{j = 1}^{n} \frac{\partial^{2} f}{\partial x_{j}^{2}}
 $$
