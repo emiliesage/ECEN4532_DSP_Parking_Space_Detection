@@ -12,8 +12,8 @@ Included in this project is the matlab file for the developed method. To impleme
 
 There has been extensive data gathering, processing and testing done to complete this project. At the beginning of the process, a camera was set up in a university building that was in clear close view of the engineering parking lot. Data was recorded from the camera from the times of 4am to 2pm on a consecutive day. after the data was recorded, ffmpeg, a video modifying command line tool,  was used to reduce the frame rate and cut out non-useful time. After that the data was small enough to analyse it in matlab on a powerful computer. the data was taken and reduced further and the final generated .mat file was 400Mb, a reasonable size to load into memory. This file was exported for later use.
 
-The next step in the process was to develop the method of detection, and ultimately two methods were chosen. One method that was used for detection was the Dicrete Laplace Opperator.
+The next step in the process was to develop the method of detection, and ultimately two methods were chosen. One method that was used for detection was the Dicrete Laplace Opperator. The Laplace Opperator is defined as the divergence of the gradient of a function. It comes in the form
 
 $$
-\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\Delta = \nabla^{2}f = \sum_{j = 1}^{n} \frac{\partial^{2}}{\partial x_{j}^{2}}
 $$
