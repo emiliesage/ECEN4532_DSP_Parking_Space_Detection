@@ -30,3 +30,6 @@ After the methods for detection were developed, The program was assembled. There
 When observing the output video it was clear that both methods detected occupacy. However there were some issues of note in this method that will be addressed in further additions to the program. The image alwas started out as occupied which is likely a programming bug that will be needed to be fixed. In figure 1 is a comparison between the two methods, when they matched up on their detection and when they had discrepencies.
 
 ![Figure 1](/Figures/Method_Comparison.png)
+Figure 1
+
+Things of note in figure 1 is the different issues that each of the detection methods had. Notably, The standard deviation method had issues with lag, and updating data in an inaccurately shaped parking space as seen by the false positive in frame 177. Conversly the Laplace Opperator showed a false negative when there were quickly changing shaddows in the frame. Both had no issues when the lighting was consistant and there were no cars in the lot. From this video data, some statistics were generated, which lead to the standard deviation method. in figure 2 is the statistics of all of the space data over time.
