@@ -9,3 +9,11 @@ The goal of this project is to develop a methodology to detect open parking spac
 Included in this project is the matlab file for the developed method. To implement this with different data the program requires a .mat file that contains video data in grayscale format. From this the program will prompt to define parking spaces, and these defined spaces are saved to be used later for future runs of the program. The output of the program is a video with a timelapse of the changes in the occupacy of the different detection methods, plots comparing the two methods, and statistical data from the images.
 
 ## Methodology
+
+There has been extensive data gathering, processing and testing done to complete this project. At the beginning of the process, a camera was set up in a university building that was in clear close view of the engineering parking lot. Data was recorded from the camera from the times of 4am to 2pm on a consecutive day. after the data was recorded, ffmpeg, a video modifying command line tool,  was used to reduce the frame rate and cut out non-useful time. After that the data was small enough to analyse it in matlab on a powerful computer. the data was taken and reduced further and the final generated .mat file was 400Mb, a reasonable size to load into memory. This file was exported for later use.
+
+The next step in the process was to develop the method of detection, and ultimately two methods were chosen. One method that was used for detection was the Dicrete Laplace Opperator.
+
+$$
+\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
