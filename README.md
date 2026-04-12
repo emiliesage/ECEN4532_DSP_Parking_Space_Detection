@@ -32,4 +32,9 @@ When observing the output video it was clear that both methods detected occupacy
 ![Figure 1](/Figures/Method_Comparison.png)
 Figure 1
 
-Things of note in figure 1 is the different issues that each of the detection methods had. Notably, The standard deviation method had issues with lag, and updating data in an inaccurately shaped parking space as seen by the false positive in frame 177. Conversly the Laplace Opperator showed a false negative when there were quickly changing shaddows in the frame. Both had no issues when the lighting was consistant and there were no cars in the lot. From this video data, some statistics were generated, which lead to the standard deviation method. in figure 2 is the statistics of all of the space data over time.
+Things of note in figure 1 is the different issues that each of the detection methods had. Notably, The standard deviation method had issues with lag, and updating data in an inaccurately shaped parking space as seen by the false positive in frame 177. Conversly the Laplace Opperator showed a false negative when there were quickly changing shaddows in the frame. Both had no issues when the lighting was consistant and there were no cars in the lot. From this video data, some statistics were generated, which lead to the standard deviation method. In figure 2 is the statistics of all of the space data over time.
+
+![Figure 1](/Figures/Per_Space_Statistics.png)
+Figure 2
+
+Some thinds of note in the Data shown in figure 2, the mean of the parking spaces does not change in a dignificant way throughout the timeloapse of the video for any of the parking spaces. There are spikes in the mean, which can be accounted for by change in shaddows and the like, as it is a timelapse of the full data taken. likewise, the local standard deviation had similar liniarity for most of the spaces, and more frequent but less intense spikes in the standard deviation. The graph that is of great note is the standard deviation from the reference mean. This shows variations of arround 60 percent at the highest and spikes and dipps at locations where the parking spaces were being changed.
