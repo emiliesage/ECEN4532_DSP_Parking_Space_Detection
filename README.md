@@ -38,4 +38,12 @@ Things of note in figure 1 is the different issues that each of the detection me
 ![Figure 1](/Figures/Binary_Occupied.png)
 Figure 2
 
-Some thinds of note in the Data shown in figure 2, the mean of the parking spaces does not change in a dignificant way throughout the timeloapse of the video for any of the parking spaces. There are spikes in the mean, which can be accounted for by change in shaddows and the like, as it is a timelapse of the full data taken. likewise, the local standard deviation had similar liniarity for most of the spaces, and more frequent but less intense spikes in the standard deviation. The graph that is of great note is the standard deviation from the reference mean. This shows variations of arround 60 percent at the highest and spikes and dipps at locations where the parking spaces were being changed.
+Some thinds of note in the Data shown in figure 2, the mean of the parking spaces does not change in a dignificant way throughout the timeloapse of the video for any of the parking spaces. There are spikes in the mean, which can be accounted for by change in shaddows and the like, as it is a timelapse of the full data taken. likewise, the local standard deviation had similar liniarity for most of the spaces, and more frequent but less intense spikes in the standard deviation. The graph that is of great note is the standard deviation from the reference mean. This shows variations of arround 60 percent at the highest and spikes and dipps at locations where the parking spaces were being changed. The STD method notably has some artifacts that the Laplace Opperator did not. 
+
+## Future Plans
+
+To further expand on this project continued work will be done on this project. The final goal of the project is to have live camera data being interperated by the method in real time. The vlalues of the thresholds will continue to be refined as well as the methodology of the standard deviation algorithm. Currently a C++ program using open cv is being devoloped for a quicker run time and a lower use of memory. Once this is completed, the plan is to mount a camera to the top of the reference building,and connect it to an ESP32, which will broadcast the live data to a server on campus. There the data will be processed and occupied spaces will be identified. the end goal is to have a phone application or web service that users can use to connect to on campus and look at what parking spaces are available, before they arrive at the location. If the method works at the reference building the method will be impelented in all of the parking lots on the campus for student use.
+
+## Conclusion
+
+
