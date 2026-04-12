@@ -2,8 +2,8 @@
 close all; clear all; clc;
  
 LAPLACIAN_THRESHOLD = 0.9;
-STD_THRESHOLD       = 0.20;
-MEAN_DROP_THRESHOLD = 0.20;
+STD_THRESHOLD       = 0.27;
+MEAN_DROP_THRESHOLD = 0.27;
 DETECT_DELAY_SEC    = 1.0;
 FPS                 = 15;
 GAUSS_SIGMA         = 3;
@@ -200,57 +200,72 @@ function plotStats(mu_log, sigma_log, std_to_ref, n_spaces, n_total, fps, change
     n_cols = 3;
     n_rows = n_spaces;
     colors = lines(n_spaces);
- 
+
+    % --- Figure 1: Mean Intensity | Std Dev | Deviation from Reference ---
     figure('Name','Per-Space Statistics','NumberTitle','off', ...
-           'Position',[100 100 1400 260*n_rows]);
- 
+        'Position',[100 100 1400 260*n_rows]);
+
     for s = 1:n_spaces
         sp_label = sprintf('Space %d', s);
         c        = colors(s,:);
- 
+
         ax1 = subplot(n_rows, n_cols, (s-1)*n_cols + 1);
         plot(t, mu_log(s,:), 'Color', c, 'LineWidth', 1.2);
         xlabel('Time (s)');
         ylabel('Mean intensity');
         title(sprintf('%s — Mean Intensity', sp_label));
         grid on;
- 
+
         ax2 = subplot(n_rows, n_cols, (s-1)*n_cols + 2);
         plot(t, sigma_log(s,:), 'Color', c, 'LineWidth', 1.2);
         xlabel('Time (s)');
         ylabel('\sigma');
         title(sprintf('%s — Std Dev', sp_label));
         grid on;
- 
+
         ax3 = subplot(n_rows, n_cols, (s-1)*n_cols + 3);
         plot(t, std_to_ref(s,:), 'Color', c, 'LineWidth', 1.2);
         yline(0.25, 'r--', 'Threshold (0.25)', ...
-              'LabelHorizontalAlignment','left', 'LineWidth', 1.2);
+            'LabelHorizontalAlignment','left', 'LineWidth', 1.2);
         xlabel('Time (s)');
         ylabel('|mean - ref| / ref');
         title(sprintf('%s — Deviation from Reference Mean', sp_label));
         grid on;
 
-
-        ax1 = subplot(n_rows, n_cols, (s-1)*n_cols + 4);
-        plot(t, changes_lap(s,:), 'Color', c, 'LineWidth', 1.2);
-        xlabel('Time (s)');
-        ylabel('Occupacy');
-        title(sprintf('%s — Binary Occupied State', sp_label));
-        grid on;
-
-        ax1 = subplot(n_rows, n_cols, (s-1)*n_cols + 5);
-        plot(t, changes_std(s,:), 'Color', c, 'LineWidth', 1.2);
-        xlabel('Time (s)');
-        ylabel('Occupacy');
-        title(sprintf('%s — Binary Occupied State', sp_label));
-        grid on;
- 
         linkaxes([ax1 ax2 ax3], 'x');
     end
- 
+
     sgtitle('Per-Space Mean Intensity  |  Std Dev  |  Deviation from Reference Mean', ...
-            'FontSize', 13, 'FontWeight', 'bold');
+        'FontSize', 13, 'FontWeight', 'bold');
+
+    % --- Figure 2: Binary Occupied State ---
+    n_cols2 = 2;
+    figure('Name','Binary Occupied','NumberTitle','off', ...
+        'Position',[100 100 1000 260*n_rows]);
+
+    for s = 1:n_spaces
+        sp_label = sprintf('Space %d', s);
+        c        = colors(s,:);
+
+        ax1 = subplot(n_rows, n_cols2, (s-1)*n_cols2 + 1);
+        plot(t, changes_lap(s,:), 'Color', c, 'LineWidth', 1.2);
+        xlabel('Time (s)');
+        ylabel('Occupancy');
+        title(sprintf('%s — Binary Occupied State LAP', sp_label));
+        grid on;
+
+        ax2 = subplot(n_rows, n_cols2, (s-1)*n_cols2 + 2);
+        plot(t, changes_std(s,:), 'Color', c, 'LineWidth', 1.2);
+        xlabel('Time (s)');
+        ylabel('Occupancy');
+        title(sprintf('%s — Binary Occupied State STD', sp_label));
+        grid on;
+
+        linkaxes([ax1 ax2], 'x');
+    end
+
+    sgtitle('Per-Space Binary Occupied State  |  LAP  |  STD', ...
+        'FontSize', 13, 'FontWeight', 'bold');
 end
  
 function plotComparison(match_ann, mismatch_ann, match_fr, mismatch_fr)
