@@ -51,5 +51,7 @@ In testing from inspection , both methods achieved an accuracy within acceptable
 ## References
 
 [1] "Parking Space Detection in OpenCV," ParkingLot, 2026. https://olgarose.github.io/ParkingLot/ (accessed Apr. 12, 2026).
+
 [2] Anthropic, "Claude," claude.ai, 2025. https://claude.ai/new
+
 [3] M. Belkin, J. Sun, and Y. Wang, "Discrete laplace operator on meshed surfaces," Jun. 2008, doi: https://doi.org/10.1145/1377676.1377725.
