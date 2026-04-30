@@ -133,7 +133,7 @@ for batch_id = 1:total_batches
             std_to_ref(s,global_f) = abs(cur_mean - mean_ref(s)) / mean_ref(s);
  
             new_std(s) = applySTD(blurred, bounds(s,:), masks{s}, ...
-                                  STD_THRESHOLD, image_height, image_width, mean_init(s));
+                                  STD_THRESHOLD,MEAN_DROP_THRESHOLD, image_height, image_width, mean_init(s));
             new_lap(s) = applyLaplacian(blurred, bounds(s,:), masks{s}, ...
                                         LAPLACIAN_THRESHOLD, image_height, image_width);
             changes_lap(s, global_f) = new_lap(s);
@@ -395,12 +395,12 @@ function is_free = applyLaplacian(blurred, rect, mask, threshold, H, W)
     is_free = mean(abs(lap(mask))) < threshold;
 end
  
-function is_free = applySTD(blurred, rect, mask, threshold, H, W, mean_init)
+function is_free = applySTD(blurred, rect, mask, threshold_std, threshold_m H, W, mean_init)
     roi          = genRoi(blurred, rect, mask, H, W);
     current_mean = mean(roi(mask));
-    std_ratio    = getSTD(roi(mask), current_mean) / current_mean;
+    std_ratio    = getSTD(roi(mask), mean_init) / mean_init;
     mean_drop    = (mean_init - current_mean) / mean_init;
-    is_free      = std_ratio < threshold && mean_drop < 0.25;
+    is_free      = std_ratio < threshold_std && mean_drop < threshold_m;
 end
  
 function roi = genRoi(blurred, rect, ~, H, W)
