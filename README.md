@@ -87,9 +87,18 @@ Figure 6
 
 Finally in the final transmission code, a sleep function was implemented to save power over long periods of time. during transmission the device can draw up to 200mA whereas in sleep mode it draws 5uA. For this section of code, the serial is flushed, the tcp client is stopped and wifi is disconnected. A timer interrupt is then initiated to watch the deepsleep until the time set is over.
 
-### Parking Space Deffination
+### Parking Space Definition
 
+The next part of the implementation is the code to define the parking spaces to be used in the final algorithm. The code uses the transmission from the ESP32 to then take user defined parking spaces and export it as a json file to be used by the main server to create things such as masks and edges for the detection algorithm. The code starts by taking in the frame buffer from the tcp connection. it then opens a window with the live video from the transmission. It then prompts the user to freze the frame and define the spaces, left click defines a point and once 3 points are defined a right click locks in in the coordinates. the user can then save the current spaces or define new spaces, or quit and save the current space data. Below are some useful snipits that lead to the implementation.
 
+![Figure 7](/Figures/Code4.png)
+Figure 7
+
+![Figure 8](/Figures/Code5.png)
+Figure 8
+
+![Figure 9](/Figures/Code6.png)
+Figure 9
 
 ## References
 
