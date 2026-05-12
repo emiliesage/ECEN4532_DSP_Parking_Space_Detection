@@ -85,7 +85,11 @@ This second snippit of code is the actual transmission of the data to the server
 ![Figure 6](/Figures/Code3.png)
 Figure 6
 
-Finally 
+Finally in the final transmission code, a sleep function was implemented to save power over long periods of time. during transmission the device can draw up to 200mA whereas in sleep mode it draws 5uA. For this section of code, the serial is flushed, the tcp client is stopped and wifi is disconnected. A timer interrupt is then initiated to watch the deepsleep until the time set is over.
+
+### Parking Space Deffination
+
+
 
 ## References
 
