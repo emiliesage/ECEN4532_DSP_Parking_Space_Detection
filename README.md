@@ -138,6 +138,12 @@ Figure 14
 ![Figure 11](/Figures/Space2_2.jpeg)
 Figure 15
 
+During conditions where the lighting is consistant, the method correctly determines the occupacy. Howerver in inconsistant lighting such as in figure 15 the false positives are more common. As in the figure there is a small shadow across the parking spaces, creating a variation in the laplacian of the space, and pushing it above the threshold. This is one of the primary issues of the method. Another hypothisis of an issue that occured is the sensitivity of the space deffinition. porely defined spaces make the variation inconsistant. Also, if the camera moves at all, the space data is thrown off. These lead to the inaccuracy of the method, and improvements need to be made to increase accuracy in the live application.
+
+## Further Action
+
+
+
 ## References
 
 [1] "Parking Space Detection in OpenCV," ParkingLot, 2026. https://olgarose.github.io/ParkingLot/ (accessed Apr. 12, 2026).
