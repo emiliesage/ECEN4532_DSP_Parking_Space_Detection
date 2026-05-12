@@ -101,7 +101,9 @@ Figure 8
 
 Once the spaces are defined, the height and width of the space are defined for each frame, and the space number and the frame height and width are writen into the json file.
 
-### 
+### Main Server
+
+The final component in the process if the main server that processes the parking space data live. The server was set up as a ssh server on an old computer but can be replaced with any server that is available. The server is designed to be hosted on an out of network system so in this case port forwarding was required for the tcp connection with the arduino, as well as the port for the web connection, though this step can be skipped if hosted on a service such as cloudlare that gives a specific domain name. for this project a Dynaic Domain Name Service was used for its free availability, security and dynamica ddaptation to changin remote ip. The server was written in python, to make easier the connection and processing, as modules make this process easier. The flowpath of the server is as follows. The server takes the frame buffer in chunks as the parking space definer did, 
 
 ## References
 
