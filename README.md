@@ -34,8 +34,8 @@ Figure 1
 
 Things of note in figure 1 is the different issues that each of the detection methods had. Notably, The standard deviation method had issues with lag, and updating data in an inaccurately shaped parking space as seen by the false positive in frame 177. Conversely the Laplace Operator showed a false negative when there were quickly changing shadows in the frame. Both had no issues when the lighting was consistent and there were no cars in the lot. From this video data, some statistics were generated, which lead to the standard deviation method. In figure 2 is the statistics of all of the space data over time.
 
-![Figure 1](/Figures/Per_Space_Statistics.png)
-![Figure 1](/Figures/Binary_Occupied.png)
+![Figure 2](/Figures/Per_Space_Statistics.png)
+![Figure 2](/Figures/Binary_Occupied.png)
 Figure 2
 
 Some things of note in the Data shown in figure 2, the mean of the parking spaces does not change in a significant way throughout the timelapse of the video for any of the parking spaces. There are spikes in the mean, which can be accounted for by change in shadows and the like, as it is a timelapse of the full data taken. likewise, the local standard deviation had similar linearity for most of the spaces, and more frequent but less intense spikes in the standard deviation. The graph that is of great note is the standard deviation from the reference mean. This shows variations of around 60 percent at the highest and spikes and dips at locations where the parking spaces were being changed. The STD method notably has some artifacts that the Laplace Operator did not. 
@@ -70,7 +70,22 @@ The microcontroller used in this project was the SeedStudio Xiao ESP32s3 Sense. 
 
 ### TCP Transmision from the Arduino Side
 
-For the arduino to communicate both with a local computer for parking space deffinition, and communication with an of site server, the arduino had to transmit a live video feed via a tcp service. TCP or transmission control protocol is a error corrected transmission service that is secure and useful for applications such as http web services. This was a good option for direct communication with a network device such as the laptop or home server.
+For the arduino to communicate both with a local computer for parking space deffinition, and communication with an of site server, the arduino had to transmit a live video feed via a tcp service. TCP or transmission control protocol is a error corrected transmission service that is secure and useful for applications such as http web services. This was a good option for direct communication with a network device such as the laptop or home server. Below are two sections of code that are the key aspects to making this happen.
+
+![Figure 4](/Figures/Code1.jpeg)
+Figure 4
+
+This snippit of code is the section that sets up the tcp service that connects to the local or external network depending con configuration. The defined client object uses the connect function and passes into the fuction the host name and port used in this connection. The computer then returns a true if the connection is successful and false if the connection is not successful. A simple section of code that is the backbone of the implementation from the arduino side.
+
+![Figure 5](/Figures/Code2.jpeg)
+Figure 5
+
+This second snippit of code is the actual transmission of the data to the server. The client is written to the header and then the video transmission is initiated. The frame buffer is referenced and passed in chunks to the service, incrementing the pointer to the current section of the frame buffer to the next chunk to be sent to the server. this runs as ling as the frame buffer contains video data.
+
+![Figure 6](/Figures/Code3.jpeg)
+Figure 6
+
+Finally 
 
 ## References
 
