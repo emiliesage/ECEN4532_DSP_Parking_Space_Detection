@@ -94,11 +94,14 @@ The next part of the implementation is the code to define the parking spaces to 
 ![Figure 7](/Figures/Code4.png)
 Figure 7
 
-![Figure 8](/Figures/Code5.png)
+The firs snipit is the section that implements the drawing of the polygon defined by the user. The polygon is defined as an array of points. The polygon is then filled using the coordinates in the origional image from teh openCVfunction and likewise create the lines defineing the outside of the polygon. it fills the space with the color defined and the lines likewise. finally it defines the points at the corners and labels the parking space with its number id.
+
+![Figure 8](/Figures/Code6.png)
 Figure 8
 
-![Figure 9](/Figures/Code6.png)
-Figure 9
+Once the spaces are defined, the height and width of the space are defined for each frame, and the space number and the frame height and width are writen into the json file.
+
+### 
 
 ## References
 
