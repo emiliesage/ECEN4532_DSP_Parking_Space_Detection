@@ -62,6 +62,13 @@ The hardware used for this implementation included a multiple stage method. It i
 ![Figure 3](/Figures/Device.jpeg)
 Figure 3
 
+The Housing is a screw omnidirictional ball and socket joint connected to a housing that contains the battery and a housing for the microcontroller. This design was created with the help of the 3D modeling group on the campus. This housing was effective in testing the device with plans to make the housing more robust for outdoor use in the future. 
+
+The microcontroller used in this project was the SeedStudio Xiao ESP32s3 Sense. It is a microcontroller the size of a thumbnail that contains an integrated camera module, as well as a rf antenna conection to implement wifi transmission, a feature that was incredibly helpful in the implementation of the project. The microcontroller contained a voltage regulator and charger that allowed for a lipo battery to be connected directly to the device. The total cost of the hardware used in this project was 40 dollars for a working prototype.
+
+## Software Implementation
+
+### TCP Transmision from the Arduino Side
 
 ## References
 
