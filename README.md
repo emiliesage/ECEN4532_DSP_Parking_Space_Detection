@@ -70,6 +70,8 @@ The microcontroller used in this project was the SeedStudio Xiao ESP32s3 Sense. 
 
 ### TCP Transmision from the Arduino Side
 
+For the arduino to communicate both with a local computer for parking space deffinition, and communication with an of site server, the arduino had to transmit a live video feed via a tcp service. TCP or transmission control protocol is a error corrected transmission service that is secure and useful for applications such as http web services. This was a good option for direct communication with a network device such as the laptop or home server.
+
 ## References
 
 [1] "Parking Space Detection in OpenCV," ParkingLot, 2026. https://olgarose.github.io/ParkingLot/ (accessed Apr. 12, 2026).
