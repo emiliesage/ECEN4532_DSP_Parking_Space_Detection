@@ -142,7 +142,7 @@ During conditions where the lighting is consistant, the method correctly determi
 
 ## Further Action
 
-
+In the future there are additions to the method that can be implemented to make the system more robust. To help eliminate the issues with parking space definition, and the movement camera issue will include bolting the device to an immobile mounting point, and including more cameras so that the space deffinition is on a larger image and thus more accurate. other improvements can include an adaptive threshold for the laplace method to reduce issues with the shadow placement as the day progeresses or cars change. Other methods such as the standard deviation method can also be applied in parallel and the combined results of the parallel methods can be used to increase accuracy. Finally a camera with a higher resolution can also increase accuracy.
 
 ## References
 
