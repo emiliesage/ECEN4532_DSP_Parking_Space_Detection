@@ -121,6 +121,23 @@ This code snipit is the section that applies the method to the parking spaces. i
 Figure 11
 
 The final snipit are the functions that create the mask and apply the laplace method. The mask is created by zeroing out the entire image, and creating an array that is spectifically the area inside of the defined space polygon. The image is then cut to contain exactly the polygon mask for the space. for the application of the Laplace method, it was as simple as sending the grayscale image to the openCV laplace method, making the value of all of the area in the mask a positive value, and averaging the values of the laplace outcome, returning the value.
+
+## Results
+
+The method application was sound but the live update of the values was intermittent, and had a few flaws. During ideal conditions such as the conditions in figure 12 and 13, the method correctly determined the spcace occupacy, but in non ideal conditions such as in figures 14 and 15, the data was incorrect with a false positive being the most common occurance.
+
+![Figure 11](/Figures/Space1.png)
+Figure 12
+
+![Figure 11](/Figures/Space1_2.png)
+Figure 13
+
+![Figure 11](/Figures/Space2.png)
+Figure 14
+
+![Figure 11](/Figures/Space2_2.png)
+Figure 15
+
 ## References
 
 [1] "Parking Space Detection in OpenCV," ParkingLot, 2026. https://olgarose.github.io/ParkingLot/ (accessed Apr. 12, 2026).
