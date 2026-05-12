@@ -103,7 +103,12 @@ Once the spaces are defined, the height and width of the space are defined for e
 
 ### Main Server
 
-The final component in the process if the main server that processes the parking space data live. The server was set up as a ssh server on an old computer but can be replaced with any server that is available. The server is designed to be hosted on an out of network system so in this case port forwarding was required for the tcp connection with the arduino, as well as the port for the web connection, though this step can be skipped if hosted on a service such as cloudlare that gives a specific domain name. for this project a Dynaic Domain Name Service was used for its free availability, security and dynamica ddaptation to changin remote ip. The server was written in python, to make easier the connection and processing, as modules make this process easier. The flowpath of the server is as follows. The server takes the frame buffer in chunks as the parking space definer did, 
+The final component in the process if the main server that processes the parking space data live. The server was set up as a ssh server on an old computer but can be replaced with any server that is available. The server is designed to be hosted on an out of network system so in this case port forwarding was required for the tcp connection with the arduino, as well as the port for the web connection, though this step can be skipped if hosted on a service such as cloudlare that gives a specific domain name. for this project a Dynaic Domain Name Service was used for its free availability, security and dynamica ddaptation to changin remote ip. The server was written in python, to make easier the connection and processing, as modules make this process easier. The flowpath of the server is as follows. The server takes the frame buffer in chunks as the parking space definer did, and then creates two threads, one for the camera transfer and processing, and one for the http service. The camera stream data is taken in and a mask is created from the parking lot json and the incomming image. The mask is then used along with the same Laplace algorith defined in the time lapse method and the status of each of the spaces is determined from the outcome. The status is then sent to the http service which shows the status of each of the parking space, the values of the laplace average, and the relationship to the threshold.
+
+Below are some sections of the code that are the most relevant to the application.
+
+![Figure 8](/Figures/Code6.png)
+Figure 8
 
 ## References
 
