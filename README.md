@@ -55,7 +55,13 @@ In testing from inspection , both methods achieved an accuracy within acceptable
 
 The goal of the second part of this project is to create a real time application of the method discribed above. The integration flowpath consists of a camera that takes data from the parking lot, sends it via a tcp server to an off site server that processes it using the Laplace algorithm, and pushes that information to a http client that can be accessed via a web service. The total integration of all of the parts in a real time application is the goal of the final implementation. The total process had a lot of moving parts and there were a lot of hurtles that had to be crossed and the final product is not quite working to the standard that was desired. The process will be detailed below.
 
-##
+## Hardware Implementation
+
+The hardware used for this implementation included a multiple stage method. It involved a 3D model for the housing of the device as well as the device itself. Below is the image of the device in its entirety.
+
+![Figure 3](/Figures/Device.jpeg)
+Figure 3
+
 
 ## References
 
