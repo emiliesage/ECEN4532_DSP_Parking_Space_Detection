@@ -48,6 +48,15 @@ To further expand on this project continued work will be done on this project. T
 
 In testing from inspection , both methods achieved an accuracy within acceptable parameters. The outputted video data showed that the methods computed correctly the parking lot changes > 85% of the time, meeting the design requirements. This is encouraging as with even less frame data, the methods were able to complete the task. There were however some complications with the methods in testing. The most notable one was the introduction of shadows into the video. In this the two methods would differ heavily in real time applications. In the timelapse the laplace method works better due to the shadows moving quickly and smoothness being rectified in few frames, however in real time, the mean is being updated on a frame by frame basis so the STD method, will account for this better than the Laplace method. In future work, both of these avenues will be explored at length and a conclusion as to which will be implemented will be reached.
 
+
+# Real Time Application
+
+## Preface
+
+The goal of the second part of this project is to create a real time application of the method discribed above. The integration flowpath consists of a camera that takes data from the parking lot, sends it via a tcp server to an off site server that processes it using the Laplace algorithm, and pushes that information to a http client that can be accessed via a web service. The total integration of all of the parts in a real time application is the goal of the final implementation. The total process had a lot of moving parts and there were a lot of hurtles that had to be crossed and the final product is not quite working to the standard that was desired. The process will be detailed below.
+
+##
+
 ## References
 
 [1] "Parking Space Detection in OpenCV," ParkingLot, 2026. https://olgarose.github.io/ParkingLot/ (accessed Apr. 12, 2026).
