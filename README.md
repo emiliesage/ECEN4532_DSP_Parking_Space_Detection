@@ -107,9 +107,20 @@ The final component in the process if the main server that processes the parking
 
 Below are some sections of the code that are the most relevant to the application.
 
-![Figure 8](/Figures/Code6.png)
-Figure 8
+![Figure 9](/Figures/Code7.png)
+Figure 9
 
+The first code snipit is the main functionality of the camera thread. The chunk data and size are determined from the stream connection. The data is global and thus a thread lock is required to preserve the data globally so that it is not accessed by multiple threads simultaneaously. the with keyword in python takes care of the aquisition and freeing of the lock, and the global data from the stream is updated, and the statuses are updated as well. if this stream is not connected, as when the ESP32 is asleep, the exception is thrown.
+
+![Figure 10](/Figures/Code8.png)
+Figure 10
+
+This code snipit is the section that applies the method to the parking spaces. it takes the maks in the detector class, which were defined based on the parking spaces in the json file, and applies the laplacian function to them. The results of the method are stored in a dictionary and returned to be accessed in the main thread, and the http thread. The dictionary includes the space id, the laplace value, and the parking status.
+
+![Figure 11](/Figures/Code9.png)
+Figure 11
+
+The final snipit are the functions that create the mask and apply the laplace method. The mask is created by zeroing out the entire image, and creating an array that is spectifically the area inside of the defined space polygon. The image is then cut to contain exactly the polygon mask for the space. for the application of the Laplace method, it was as simple as sending the grayscale image to the openCV laplace method, making the value of all of the area in the mask a positive value, and averaging the values of the laplace outcome, returning the value.
 ## References
 
 [1] "Parking Space Detection in OpenCV," ParkingLot, 2026. https://olgarose.github.io/ParkingLot/ (accessed Apr. 12, 2026).
