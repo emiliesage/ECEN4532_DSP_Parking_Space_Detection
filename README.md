@@ -126,16 +126,16 @@ The final snipit are the functions that create the mask and apply the laplace me
 
 The method application was sound but the live update of the values was intermittent, and had a few flaws. During ideal conditions such as the conditions in figure 12 and 13, the method correctly determined the spcace occupacy, but in non ideal conditions such as in figures 14 and 15, the data was incorrect with a false positive being the most common occurance.
 
-![Figure 11](/Figures/Space1.png)
+![Figure 11](/Figures/Space1.jpeg)
 Figure 12
 
-![Figure 11](/Figures/Space1_2.png)
+![Figure 11](/Figures/Space1_2.jpeg)
 Figure 13
 
-![Figure 11](/Figures/Space2.png)
+![Figure 11](/Figures/Space2.jpeg)
 Figure 14
 
-![Figure 11](/Figures/Space2_2.png)
+![Figure 11](/Figures/Space2_2.jpeg)
 Figure 15
 
 ## References
