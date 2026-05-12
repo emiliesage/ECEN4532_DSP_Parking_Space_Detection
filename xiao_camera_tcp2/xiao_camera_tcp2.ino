@@ -39,6 +39,7 @@ const char* PASSWORD = "AbqhzHkR965";  // ← change to your WiFi password
 // Set this to your laptop's local IP (e.g. "192.168.1.42").
 // Find it with: Windows → ipconfig | Mac/Linux → ifconfig
 const char* SERVER_HOST = "10.4.55.31";    // ← CHANGE THIS to your laptop IP
+//const char*    SERVER_HOST = "parkingCuFinal.gleeze.com";
 const uint16_t SERVER_PORT = 5001;
 
 // ── Reconnect interval (ms) ───────────────────────────────────────────────────
